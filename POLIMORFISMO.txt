@@ -1,0 +1,98 @@
+POLIMORFISMO:
+-------------
+
+package uni.fiis.herencia.bean;
+
+/**
+ * Created by Dell on 05/06/2015.
+ */
+
+public class Coche extends Vehiculo {
+    private Integer puertas;
+
+
+
+    //Constructor
+    public Coche(String color, Integer cv, Integer puertas){
+
+        super(color, cv, 4);
+        this.puertas= puertas;
+
+    }
+
+}
+
+public class Moto extends Vehiculo  {
+
+
+    private Boolean reparar_cadena;
+
+
+    //Constructor
+    public Moto(String color, Integer cv, Boolean reparar_cadena){
+
+        super(color, cv, 2);
+        this.reparar_cadena = reparar_cadena;
+
+    }
+
+public class Principal {
+    public static void main(String[] args) {
+        Coche c = new Coche("rojo", 100, 4);
+        Moto m = new Moto("verde", 200, false);
+
+        System.out.println("La velocidad del coche es: "+c.getVelocidad() );
+        System.out.println("La velocidad de la moto es: "+m.getVelocidad() );
+
+        c.acelera();
+        m.acelera();
+
+        System.out.println("La velocidad del coche es: " + c.getVelocidad());
+        System.out.println("La velocidad de la moto es: " + m.getVelocidad());
+
+    }
+}
+
+
+public class Vehiculo {
+    private String color;
+    private Integer cv;
+    private Integer velocidad;
+    private Integer ruedas;
+    private Integer cristales;
+
+
+    public Vehiculo(String color, Integer cv, Integer ruedas){
+        this.color = color;
+        this.cv = cv;
+        this.ruedas = ruedas;
+        velocidad = 0;
+    }
+
+
+    //Gets
+    public Integer getCv() {
+        return cv;
+    }
+
+    public Integer getVelocidad() {
+        return velocidad;
+    }
+
+    public Integer getRuedas() {
+        return ruedas;
+    }
+
+
+
+    //Metodos
+    public void acelera (){
+        velocidad+= cv/20;
+    }
+
+    public void frena(){
+        velocidad = 0;
+    }
+
+    
+}
