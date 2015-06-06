@@ -1,4 +1,4 @@
-POLIMORFISMO:
+HERENCIA:
 -------------
 
 package uni.fiis.herencia.bean;
